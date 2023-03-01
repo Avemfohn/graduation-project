@@ -6,6 +6,9 @@ import {useEffect, useState} from "react";
 
 function Nlp(props) {
         const [str, setStr] = useState("");
+        const [countWord, setCountWord] = useState(0);
+        const [perWord, setPerWord] = useState(0);
+
         const setString = (e) => {
             setStr(e.target.value);
         }
@@ -47,6 +50,8 @@ function Nlp(props) {
             perOut[word] = parseFloat(percentage.toFixed(2));
         }
     }
+    // setCountWord(output);
+    // setPerWord(perOut);
   return [output, perOut];
 }
 
@@ -57,7 +62,8 @@ console.log(countWords());
             <p>Enter a sentence to count the words</p>
             <input value={str} onChange={setString} type="text" id="input" />
             <button onClick={countWords}>Count</button>
-
+                <p>{countWord}</p>
+                <p>{perWord}</p>
             </div>
         );
 
