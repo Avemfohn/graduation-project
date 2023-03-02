@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nlpContainer {
+  background-color: gray;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.nlpContainer ul li{
+  list-style-type: none;
+}
