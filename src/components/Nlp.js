@@ -9,7 +9,10 @@ function Nlp(props) {
         return axios.get("http://localhost:4000/questions");
 
     }
-  const {isLoading, error, data} = useQuery("questions", fetchQuestions);
+  const {isLoading, error, data} = useQuery("questions", fetchQuestions)
+    if (isLoading) return <h2>Loading...</h2>;
+    if (error) return <h2>Error...</h2>;
+
 
 //JavaScript code
 function countWords(str) {
