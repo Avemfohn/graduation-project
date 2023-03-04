@@ -1,24 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import NLP from './nlp/Nlp';
-import Nlp from "./nlp/Nlp";
+import {QueryClientProvider, QueryClient} from "react-query";
+import Nlp from "./components/Nlp";
 
 function App() {
 
-  const options = {
-  method: 'GET',
-  url: 'https://textapis.p.rapidapi.com/ner/display',
-  params: {text: 'An October post from Dylan that may be saving you a Google search.'},
-  headers: {
-    'X-RapidAPI-Key': 'e73227c5ddmshc121d17db204b3cp16eefbjsnd100d785f109',
-    'X-RapidAPI-Host': 'textapis.p.rapidapi.com'
-  }
-};
-
   return (
+    <QueryClientProvider client={new QueryClient()}>
     <div className="App">
-      <Nlp />
+        <Nlp />
     </div>
+    </QueryClientProvider>
   );
 }
 
