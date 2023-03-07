@@ -1,55 +1,75 @@
-import React from 'react';
-import axios from 'axios';
-import {useQuery} from "react-query";
-
+import React, { useState } from "react";
+import axios from "axios";
+import { useQuery } from "react-query";
 
 function Nlp(props) {
+  const [resultList, setResultList] = useState([]);
 
-    const fetchQuestions = async () => {
-        return axios.get("http://localhost:4000/questions");
+  const fetchQuestions = async () => {
+    return axios.get("http://localhost:4000/questions");
+  };
+  const { isLoading, error, data } = useQuery("questions", fetchQuestions);
+  if (isLoading) return <h2>Loading...</h2>;
+  if (error) return <h2>Error...</h2>;
 
+  //JavaScript code
+  function countWords(str) {
+    //Edge case: an empty array
+    var resultArray = [];
+    if (str.length === 0) {
+      return {};
     }
-  const {isLoading, error, data} = useQuery("questions", fetchQuestions)
-    if (isLoading) return <h2>Loading...</h2>;
-    if (error) return <h2>Error...</h2>;
-
-
-//JavaScript code
-function countWords(str) {
-//Edge case: an empty array
-  if (str.length === 0) {
-    return {};
-  } 
-  const output = {};
-  const perOut = {};
-  const strArr = str.split("")
-//A loop
-  let count = 0;
-  for (let i=0; i < strArr.length; i++) {
-    let word = strArr[i];
-    if (!word.includes(" ")) {
+    const output = {};
+    const perOut = {};
+    const strArr = str.split("");
+    let count = 0;
+    for (let i = 0; i < strArr.length; i++) {
+      let word = strArr[i].toLocaleLowerCase('tr');
+      console.log("word", word);
+      if (!word.includes(" ")) {
         if (output[word] === undefined) {
-            output[word] = 1;
-            count++;
+          output[word] = 1;
+          count++;
         } else {
-            output[word] += 1;
-            count += 1;
+          output[word] += 1;
+          count += 1;
         }
+      }
     }
-  }
-    for (let j = 0; j < count; j++) {
-        let word = strArr[j];
-        if (!word.includes(" ")) {
-            let percentage = (output[word]/count) * 100;
-            perOut[word] = parseFloat(percentage.toFixed(2));
-        }
-    }
-  return [output, perOut];
-}
+    for (var j = 0; j < count; j++) {
+      var word = strArr[j].toLocaleLowerCase('tr');
+      if (!word.includes(" ")) {
+        let percentage = (output[word] / count) * 100;
+        perOut[word] = parseFloat(percentage.toFixed(2));
+        var newObject = {
+          word: word,
+          count: output[word],
+          percentage: perOut[word],
+        };
 
-let output = countWords('ask a bunch get a bunch');
-// { ask: 1, a: 2, bunch: 2, get: 1 }
-    
+        let resultArrayControl = false;
+        if (resultArray.length === 0) {
+          resultArray.push(newObject);
+        } else {
+          resultArray.forEach((element) => {
+            if (element.word === newObject.word) {
+              resultArrayControl = true;
+            }
+          });
+          if (!resultArrayControl) {
+            resultArray.push(newObject);
+          }
+        }
+      }
+    }
+
+    resultArray.forEach(element => {
+      setResultList(oldArray => [...oldArray, element]);
+    });
+    console.log("qqq", resultList)
+    return [output, perOut];
+  }
+
   /*
   const [countWord, setCountWord] = useState(0);
   const [perWord, setPerWord] = useState(0);
@@ -57,6 +77,7 @@ let output = countWords('ask a bunch get a bunch');
 
   const setString = (e) => {
     setStr(e.target.value);
+    
   }
 
   const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
@@ -133,7 +154,7 @@ let output = countWords('ask a bunch get a bunch');
   // }
 
   //Export components datas to json file
- /* const exportData = (resultArray) => {
+  /* const exportData = (resultArray) => {
     const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
       JSON.stringify(resultArray)
     )}`;
@@ -145,20 +166,18 @@ let output = countWords('ask a bunch get a bunch');
   }; */
 
   return (
-
     <div className="App">
-      <div className='nlpContainer'>
+      <div className="nlpContainer">
         <ul>
-            {
-          data?.data.map((item) => {
-            return <li key={item.id}>{item.text}</li>
-          })
-        }</ul>
+          {data?.data.map((item) => {
+          return <li key={item.id}>{item.text}         <button onClick={countWords(item.text)}></button>
+          </li>;
+          <li className="0"></li>
+          })}
+        </ul>
       </div>
     </div>
-
   );
-
 }
 
 export default Nlp;
