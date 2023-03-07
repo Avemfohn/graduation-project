@@ -2,14 +2,93 @@
   "questions": [
     {
       "id": 1,
-      "text":"Ne mutlu Türküm diyene",
-      "cipher": "Sj rzyqz Yüwpür indjsj",
-      "type": "caesar"
+      "text":"Bugünün bilimi yarının teknolojisidir.",
+      "cipher": "Çvhyöyö çknkok acşjöjö ügmöpnplktkfkş.",
+      "type": "caesar",
+      "hint": {"hint1": "Caesar Sifreleme", "hint2": "2 karakter kaydırma"},
+      "subject": "Bilim ve Teknoloji"
 
     },
      {
       "id": 2,
-      "text":"Benim naçiz vücudum elbet bir gün toprak olacaktır, ancak Türkiye Cumhuriyeti ilelebet payidar kalacaktır"
+      "text":"Makineler ancak yanlış yaptıklarında size ne kadar güçlü olduklarını hatırlatır.",
+      "cipher": "İrüdrölo, yap ğsjuz yhorsösnmcm cdrölv rhğhröhuöh höğh hğmcsu.",
+      "type": "caesar",
+      "hint": {"hint1": "Caesar Sifreleme", "hint2": "4 karakter kaydırma"},
+       "subject": "Bilim ve Teknoloji"
+
+    },
+     {
+      "id": 3,
+      "text":"Teknoloji hareketleri kesin ve acımasız yapıyor. Bununla birlikte insanları da.",
+      "cipher": "Etmjilino pzğtmteltğo mtgoj ct zvökzgöa bzhöbiğ. Ydjdjlz yoğlomet ojgzjlzğö uz.",
+      "type": "atbash",
+      "hint": {"hint1": "Atbash Şifreleme", "hint2": "Alfabenin tersten yazılması ile oluşturulan bir kodlayıcıya sahiptir"},
+       "subject": "Bilim ve Teknoloji"
+
+    },
+     {
+      "id": 4,
+      "text":"Nanoteknoloji, en az bir boyutu nanometre ile ölçülebilen, moleküler ve atomik ölçekte dizayn edilmiş işlevsel yapıların inşa edilmesi veya kullanılmasıdır.",
+      "cipher":"Gdghslbghçhzv, lg dc fvm fhatst gdghelsml vçl içıüçlfvçlg, ehçlbüçlm yl dshevb içılbsl jvcdag ljvçevp vpçlyolç adkuçdmug vgpd ljvçelov ylad btççdguçedoujum.",
+      "type": "affine",
+      "hint": {"hint1": "Affine Sifreleme", "hint2": "y=ax+b", "hint3": "(y=ax+b) -> x, şifrelenecek mesajı (plain text), y şifrelenmiş mesajı (cipher text) ifade etmektedir","hint3": "a=2 b=4"},
+       "subject": "Bilim ve Teknoloji"
+
+    },
+     {
+      "id": 5,
+      "text":"Bugünün bilimi yarının teknolojisidir.",
+      "cipher": "Jcoüvüv jqtquq gizıvıv bmsvwtwrqaqlqz.",
+      "type": "caesar",
+      "hint": {"hint1": "Caesar Sifreleme", "hint2": "8 karakter kaydırma"},
+       "subject": "Bilim ve Teknoloji"
+
+    },
+     {
+      "id": 6,
+      "text":"Bugünün bilimi yarının teknolojisidir.",
+      "cipher": "Jcoüvüv jqtquq gizıvıv bmsvwtwrqaqlqz.",
+      "type": "caesar",
+      "hint": {"hint1": "Caesar Sifreleme", "hint2": "8 karakter kaydırma"},
+         "subject": "Bilim ve Teknoloji"
+
+    },
+     {
+      "id": 7,
+      "text":"Bugünün bilimi yarının teknolojisidir.",
+      "cipher": "Jcoüvüv jqtquq gizıvıv bmsvwtwrqaqlqz.",
+      "type": "caesar",
+      "hint": {"hint1": "Caesar Sifreleme", "hint2": "8 karakter kaydırma"},
+      "subject": "Bilim ve Teknoloji"
+
+    },
+     {
+      "id": 8,
+      "text":"Makineler ancak yanlış yaptıklarında size ne kadar güçlü olduklarını hatırlatır.",
+      "cipher": "Wkusxovob kxmku ikxvış ikzdıuvkbıxnk csjo xo uknkb qüçvü yvneuvkbıxı rkdıbvkdıb.",
+      "type": "caesar",
+      "hint": {"hint1": "Caesar Sifreleme", "hint2": "10 karakter kaydırma"},
+       "subject": "Bilim ve Teknoloji"
+
+    },
+     {
+      "id": 9,
+      "text":"Teknoloji hareketleri kesin ve acımasız yapıyor. Bununla birlikte insanları da.",
+      "cipher": "Xiorspsnm levioixpivm oiwmr zi egıqewıd cetıcsv. Fyryrpe fmvpmoxi mrwerpevı he.",
+      "type": "caesar",
+      "hint": {"hint1": "Caesar Sifreleme", "hint2": "4 karakter kaydırma"},
+       "subject": "Bilim ve Teknoloji"
+
+    },
+     {
+      "id": 10,
+      "text":"Bugünün bilimi yarının teknolojisidir.",
+      "cipher": "Jcoüvüv jqtquq gizıvıv bmsvwtwrqaqlqz.",
+      "type": "caesar",
+      "hint": {"hint1": "Caesar Sifreleme", "hint2": "8 karakter kaydırma"},
+       "subject": "Bilim ve Teknoloji"
+
     }
   ]
 }
