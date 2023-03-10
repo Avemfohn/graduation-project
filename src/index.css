@@ -13,10 +13,25 @@ code {
 }
 
 .nlpContainer {
-  background-color: gray;
-  margin-left: 40%;
-  margin-right: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.getBarChart {
+  width: 120px;
+  height: 30px;
+  background-color: #fafafa;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.getchart:hover {
+  background-color: lightgray;
 }
 .nlpContainer ul li{
   list-style-type: none;
+}
+
+.barChart {
+  width: 500px;
+  margin-left: 33%;
 }
